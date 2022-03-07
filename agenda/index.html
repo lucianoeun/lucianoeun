@@ -6,39 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>agenda</title>
-    <style>
-        .linha {
-            width: 100%;
-            height: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .box {
-            width: 200px;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: antiquewhite;
-            margin-top: 15px;
-        }
-        
-        .menu {
-            width: 100%;
-            height: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            background-color: antiquewhite;
-            margin-top: 15px;
-            gap: 10px;
-        }
-    </style>
+   <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
@@ -48,9 +16,9 @@
         <div class="menu">
 
             <select name="meses" id="" v-model="meses">
-                <option value="janeiro">Janeiro</option>
-                <option value="fevereiro">Fevereiro</option>
-                <option value="marco">Março</option>
+                <option value="Janeiro">Janeiro</option>
+                <option value="Fevereiro">Fevereiro</option>
+                <option value="Março">Março</option>
             </select>
 
             <button @click="btnmenos()"> - </button>
@@ -61,11 +29,11 @@
 
 
         <div class="linha">
-            <div v-for="item in calendario" :key="item.id">
-                <div class="box" v-if="item.mes === meses && item.numero === semanas">
+            <div v-for="item in calendario" :key="item.index">
+                <div class="box" v-if="item.mes === meses && item.semanas === semanas">
                     <p> {{item.datas}}</p>
                     <p> {{item.semana}}</p>
-                    <p> {{item.dia}}</p>
+                   
                 </div>
             </div>
         </div>
