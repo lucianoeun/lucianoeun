@@ -1,1 +1,5 @@
 Linha de textos
+
+#=================================================
+git config --global user.name "lucianoeun"
+git config --global user.email lmideias@gmail.com

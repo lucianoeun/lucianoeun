@@ -12,34 +12,54 @@
 <body>
 
     <div id="app">
-
-        <div class="menu">
-
-            <select name="meses" id="" v-model="meses">
-                <option value="Janeiro">Janeiro</option>
-                <option value="Fevereiro">Fevereiro</option>
-                <option value="Março">Março</option>
-            </select>
-
-            <button @click="btnmenos()"> - </button>
-            <p>{{semanas}}</p>
-            <button @click="btnmais()"> + </button>
-
+        <div class="l-full">
+            <div class="l-center">
+               <div class="header-menu">
+                   <p>p</p>
+                   <p>p</p>
+                   <p>p</p>
+               </div>
+            </div>
         </div>
+        <div class="l-full">
+            <div class="l-center">
+                <div class="opt">
 
-
-        <div class="linha">
-            <div v-for="item in calendario" :key="item.index">
-                <div class="box" v-if="item.mes === meses && item.semanas === semanas">
-                    <p> {{item.datas}}</p>
-                    <p> {{item.semana}}</p>
-                   
+                    <select name="meses" id="" v-model="meses">
+                        <option value="Janeiro">Janeiro</option>
+                        <option value="Fevereiro">Fevereiro</option>
+                        <option value="Março">Março</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Maio">Maio</option>
+                    </select>
+        
+                    <button @click="btnmenos()"> - </button>
+                    <h4>{{semanas}}º semana</h4>
+                    <button @click="btnmais()"> + </button>
+        
                 </div>
             </div>
         </div>
 
+        
+        <div class="container">
+            <div class="grid-c4">
+                <div v-for="item in calendario" :key="item.index" v-if="item.mes === meses && item.semanas === semanas">
+                    <div class="box" >
+                        <div class="b-header">
+                            <h4> {{item.datas}} : {{item.semana}}</h4> 
+                        </div>
+                        <p>Nome no mundo</p>
+                                     
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
 
 
+      
 
     </div>
 
