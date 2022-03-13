@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="inc/app.css">
+</head>
+
+<body>
+
+
+    <div class="main">
+
+        <div id="">
+            <div class="mobile-a">
+                <div class="mobile-menu menu-color">
+                    <p></p>
+                    <p>Eventos</p>
+                    <i class="material-icons"> close</i>
+                </div>
+
+                <div class="mobile-body">
+                    <h3>Titulo h3</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus reiciendis quae voluptas tenetur aspernatur dicta quaerat dolore fugiat itaque repellendus laboriosam, a molestiae? Dolorem, eligendi? Eos cupiditate vitae eaque ut.</p>
+                </div>
+
+                
+
+
+
+
+
+            </div>                    
+        </div>
+
+
+         <!-- [ ] =============================================== -->
+
+
+         <div id="form">
+            <div class="mobile-a">
+                <div class="mobile-menu menu-color">
+                    <p></p>
+                    <p>Eventos</p>
+                    <i class="material-icons"> close</i>
+                </div>
+                <div class="mobile-body">
+                  
+                    <p>Criação de eventos provisorios para organização da agenda anual.</p>
+                    
+                    <form action="">
+
+                        <div class="mobile-coluna">
+                            <label for="">Data</label>
+                            <input type="text" name="" id="" style="width: 120px;">
+                        </div>
+                        <div class="mobile-coluna">
+                            <label for="">Nome do evento</label>
+                            <input type="text" name="" id="" style="width: 320px;">
+                        </div>
+                        <div class="mobile-coluna">
+                            <label for="">Responsável</label>
+                            <input type="text" name="" id="" style="width: 230px;">
+                        </div>
+
+                      
+
+                                          
+                    </form>  
+                    
+                    
+                    <div class="mobile-coluna">
+                        <label for="">Listagem</label>
+                        <div v-for="item in lista" :key="item.index">
+                            <div class="mobile-linha">
+                                <p>{{item.datas}}</p>
+                                <p>{{item.titulo}}</p>
+                                <p>{{item.dono}}</p>
+                                <button>X</button>
+                            </div>
+                        </div>
+                       
+                    </div>   
+
+                
+                </div>
+            </div>                    
+        </div>
+
+
+        <!-- [ ] =============================================== -->
+
+
+        <div id="">
+            <div class="mobile-a">
+                <div class="mobile-menu menu-color">
+                    <p></p>
+                    <p>Formulario</p>
+                    <i class="material-icons"> close</i>
+                </div>
+                <div class="mobile-body">
+                    <h3>Titulo h3</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus reiciendis quae voluptas tenetur aspernatur dicta quaerat dolore fugiat itaque repellendus laboriosam, a molestiae? Dolorem, eligendi? Eos cupiditate vitae eaque ut.</p>
+                    
+                    <form action="">
+                        <div class="mobile-coluna">
+                            <label for="">Nome</label>
+                            <input type="text" name="" id="">
+                        </div>
+
+                        <div class="mobile-linha">
+                            <input type="text" name="" id="">
+                            <input type="text" name="" id="">
+                            <input type="text" name="" id="">
+                        </div>
+
+                        <div class="mobile-coluna">
+                            <label for="">Select</label>
+                           <select name="" id="">
+                               <option value="1">1 opção</option>
+                               <option value="2">2 opção</option>
+                               <option value="3">3 opção</option>
+                               <option value="4">4 opção</option>
+                           </select>
+                        </div>                     
+                    </form>  
+                    
+                    
+                    
+
+                
+                </div>
+            </div>                    
+        </div>
+
+        <!-- [ ] =============================================== -->
+
+        <div id="app">
+            <div class="mobile">
+                <div class="capa">
+                    <img src="img/capa.png" alt="">
+                </div>
+    
+                <div class="contra-capa">
+                   
+                </div>
+    
+                <div class="capa-container">
+                    <div class="mobile-menu">
+                        <p></p>
+                        <p>MyAdventure</p>
+                        <i class="material-icons"> close</i>
+                    </div>
+    
+                   <div class="nome">
+                       <h1>Luciano</h1>
+                       <h1>Eun</h1>
+                   </div>
+    
+                   <div class="desc">
+                       <p>Luciano de oliveira da silva do rio de janeiro RJ</p>
+                   </div>
+    
+                   <div class="btnp">
+                      <button>+</button>
+                   </div>
+                </div>
+    
+                <div class="titulo-l">
+                    <p>Minhas aventuras</p>
+                </div>
+    
+                <div class="album-l">
+                    <img src="img/ft1.png" alt="">
+                    <img src="img/ft1.png" alt="">
+                    <img src="img/ft1.png" alt="">
+                </div>           
+            </div>      
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js "></script>
+    <script src="inc/app.js"></script>
+
+</body>
+
+</html>
