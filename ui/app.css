@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+html {
+    font-size: 62%;
+}
+
+html,
+body {
+    height: 100vh;   
+    font-family: "Source Sans Pro";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*==[ ]===============================*/
+
+
+.container {
+    width: 640px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+    background-color: antiquewhite;
+}
+
+
+
+/*==[ ]===============================*/
+
+.menux {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 15px;   
+}
+
+.cbody {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;  
+    margin: 15px;
+}
+
+
+/*==[ ]===============================*/
+
+
+
+.linha {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.box {
+    width: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    margin-top: 15px;
+}
+
+.menu {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    margin-top: 15px;
+    gap: 10px;
+}
