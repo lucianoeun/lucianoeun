@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+
+    <div id="app">       
+
+         <!-- [ ] ============================= -->
+
+        
+            <div class="mobile">
+               
+                <div class="mobile-menu menu-color">
+                    <p></p>
+                    <p>Eventos</p>
+                    <i class="material-icons"> close</i>
+                </div>
+
+  <!-- [ ] ============================= -->
+
+
+                <div class="mobile-body">
+                  
+                    <p>Criação de eventos provisorios para organização da agenda anual.</p>
+                    
+                      <!-- [ ] ============================= -->
+
+                    <div class="mobile-form">
+                        <p>Evento adicionado com sucesso</p>
+                        <form action="" >
+                            <div class="mobile-coluna">
+                                <label for="">Data</label>
+                                <input type="text" name="" id="" style="width: 120px;">
+                            </div>
+    
+                            <div class="mobile-coluna">
+                                <label for="">Nome do evento</label>
+                                <input type="text" name="" id="" style="width: 320px;">
+                            </div>
+    
+                            <div class="mobile-coluna">
+                                <label for="">Responsável</label>
+                                <input type="text" name="" id="" style="width: 230px;">
+                            </div>   
+
+                            <div class="mobile-coluna">
+                               <button>Adicionar</button>
+                            </div>                
+                       
+                        </form>  
+                    </div>
+
+                   
+                    
+                      <!-- [ ] ============================= -->
+
+                  
+                    
+                    <div class="mobile-coluna">
+                       <div class="header-meses">
+                           <p>Março</p>
+                           <p>30 Eventos</p>
+                           <i class="material-icons"> close</i>
+                       </div>
+                       <div class="listagem">
+                            <div v-for="item in lista" :key="item.index">
+                                <div class="lista-grid">
+                                    <p>{{item.datas}}</p>
+                                    <p>{{item.titulo}}</p>
+                                    <p>{{item.dono}}</p>
+                                    <i class="material-icons"> close</i>
+                                </div>
+                            </div>
+                       </div>
+
+                       <div class="header-meses">
+                            <p>Abril</p>
+                        </div>
+
+                    <div class="header-meses">
+                        <p>Maio</p>
+                    </div>
+
+                    <div class="header-meses">
+                        <p>Junho</p>
+                    </div>
+
+                    <div class="header-meses">
+                        <p>Julho</p>
+                    </div>
+
+                    <div class="header-meses">
+                        <p>Agosto</p>
+                    </div>
+
+                    <div class="header-meses">
+                        <p>Setembro</p>
+                    </div>
+
+                    <div class="header-meses">
+                        <p>Outubro</p>
+                    </div>
+
+                    <div class="header-meses">
+                        <p>Novembro</p>
+                    </div>
+
+                    <div class="header-meses">
+                        <p>Dezembro</p>
+                    </div>
+                       
+                    </div>   
+
+                
+                </div>
+            </div>                    
+          
+    </div>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js "></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

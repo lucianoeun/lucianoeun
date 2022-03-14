@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+html {
+    font-size: 62%;
+}
+
+html,
+body {
+    height: 100vh;   
+    font-family: "Source Sans Pro";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-size: 1.8rem;
+    text-decoration: none;
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+/*==[ ]===============================*/
+
+
+
+p {
+    font-size: 1.6rem; 
+}
+
+
+.mobile {
+    width: 420px;
+    height: auto;  
+    display: flex;
+    flex-direction: column;  
+    background-color: #b9e6ad;
+   
+}
+
+
+/*==[ MENU ]===============================*/
+
+
+.mobile-menu {
+    width: 100%;
+    height: 40px;   
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;   
+    padding: 10px 10px 10px 15px;
+    color: #fff;
+}
+
+.mobile-menu i{
+   font-size: 1.8rem;
+}
+
+.menu-color{
+    background-color: #212121;
+}
+
+/*==[ ]===============================*/
+
+.mobile-body {
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: column;   
+    padding: 10px;
+    background-color:antiquewhite;
+    gap: 5px;
+}
+
+/*==[ ]===============================*/
+
+form{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: column;  
+}
+.mobile-coluna{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.mobile-linha{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+input, select{
+    width: 100%;
+    height: 35px; 
+    border: 1px solid #ccc;  
+    text-align: left;
+    padding-left: 8px;
+    border-radius: 3px;
+}
+
+label{
+    font-size: 1.6rem;
+    margin-left: 5px;
+}
+/*==[ ]===============================*/
+
+.header-meses{
+    width: 100%;
+    height: 30px;   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 10px;
+    background-color: #192516;
+    color: #fff;
+    padding-left: 15px;
+}
+
+.header-meses i{
+    font-size: 1.8rem;
+    margin-right: 5px;
+}
+
+/*==[ ]===============================*/
+
+.mobile-form{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: column;   
+    padding: 15px 0px 15px 0px;
+}
+
+.mobile-form p{
+   text-align: center;
+   font-size: 1.6rem;
+}
+
+.mobile-form button{
+    width: 80px;
+    height: 35px;
+    border:none;
+    margin-top: 5px;
+    cursor: pointer;
+    background-color: #b9e6ad;
+    border-radius: 4px;
+ }
+
+/*==[ ]===============================*/
+.listagem{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: column;  
+    padding: 5px;
+}
+
+.lista-grid{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+    align-items: center;
+    background-color: #e6f8e2;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.lista-grid i{
+    font-size: 1.8rem;
+}
+
+/*==[ ]===============================*/
+/*==[ ]===============================*/
+/*==[ ]===============================*/
+
+
+
+.contra-capa {
+    width: 100%;
+    height: 560px;   
+    display: flex;
+    flex-direction: column; 
+    background: rgb(1,48,3);
+    background: linear-gradient(0deg, rgba(1,48,3,1) 14%, rgba(19,82,2,0.2147233893557423) 38%, rgba(6,106,5,0.0018382352941176405) 100%);
+
+
+margin-top: -560px;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+
+/*==[ 640px ]===============================*/
+
+@media (max-width: 480px) {
+    .mobile {
+        width: 100%;
+        height: auto;  
+        display: flex;
+        flex-direction: column;  
+        background-color: #b9e6ad;
+        margin-top: 0px;
+    }
+}
