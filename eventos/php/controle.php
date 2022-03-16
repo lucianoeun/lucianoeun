@@ -1,14 +1,15 @@
 <?php
       
-    function __autoload($class)
-    {
-        require_once "config/$class.php";
-    }
-
+  
+    spl_autoload_register(function ($class_name) {
+        include $class_name . '.php';
+    });
     
 
-    $tabela = 'agenda';
+    $tabela = 'eventos';
     $resultado[] = '';
+    
+    //$action = 'listar';
     $action = $_GET['action']; 
    
     if (isset($_GET['action'])) {
