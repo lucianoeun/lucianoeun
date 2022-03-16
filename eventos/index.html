@@ -33,10 +33,10 @@
                   
                     <p>Criação de eventos provisorios para organização da agenda anual.</p>
                     
-                      <!-- [ ] ============================= -->
+                    <!-- [ ] ============================= -->
 
-                    <div class="mobile-form">
-                        <p>Evento adicionado com sucesso</p>
+                    <div v-if="fcard" class="mobile-form" style="background-color:aquamarine;">
+                       
                         <form action="" >
                             <div class="mobile-coluna">
                                 <label for="">Data</label>
@@ -53,8 +53,38 @@
                                 <input type="text" name="" id="" style="width: 230px;">
                             </div>   
 
-                            <div class="mobile-coluna">
+                            <div class="mobile-linha">
                                <button>Adicionar</button>
+                               <p v-if="info">{{info}}</p>
+                            </div>                
+                       
+                        </form>  
+                    </div>
+
+
+                     <!-- [ ] ============================= -->
+
+                     <div v-if="feditar" class="mobile-form" style="background-color:rgb(255, 236, 127);">
+                        
+                        <form action="" >
+                            <div class="mobile-coluna">
+                                <label for="">Data</label>
+                                <input type="text" name="" id="" v-model="evento.datas" style="width: 120px;">
+                            </div>
+    
+                            <div class="mobile-coluna">
+                                <label for="">Nome do evento</label>
+                                <input type="text" name="" id="" v-model="evento.titulo" style="width: 320px;">
+                            </div>
+    
+                            <div class="mobile-coluna">
+                                <label for="">Responsável</label>
+                                <input type="text" name="" id="" v-model="evento.responsavel" style="width: 230px;">
+                            </div>   
+
+                            <div class="mobile-linha">
+                               <button>Salvar</button>
+                               <p v-if="info">{{info}}</p>
                             </div>                
                        
                         </form>  
@@ -70,21 +100,31 @@
                        <div class="header-meses">
                            <p>Março</p>
                            <p>30 Eventos</p>
-                           <i class="material-icons"> close</i>
+                           <i class="material-icons"  v-if="m1" @click="m1 = false"> keyboard_arrow_up</i>  
+                           <i class="material-icons"  v-if="!m1" @click="m1 = true"> keyboard_arrow_down</i>                                                
                        </div>
-                       <div class="listagem">
+
+                       <div class="listagem" v-if="m1">
                             <div v-for="item in lista" :key="item.index">
                                 <div class="lista-grid">
-                                    <p>{{item.datas}}</p>
+                                    <p @click="formEditar(item)">{{item.datas}}</p>
                                     <p>{{item.titulo}}</p>
-                                    <p>{{item.dono}}</p>
+                                    <p>{{item.responsavel}}</p>
                                     <i class="material-icons"> close</i>
                                 </div>
                             </div>
                        </div>
 
+
+
+
+
+
+
                        <div class="header-meses">
-                            <p>Abril</p>
+                            <p>Abril</p>                           
+                            <p>30 Eventos</p>                           
+                            <i class="material-icons"> keyboard_arrow_up</i>     
                         </div>
 
                     <div class="header-meses">
