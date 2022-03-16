@@ -35,13 +35,30 @@
                     
                     <!-- [ ] ============================= -->
 
-                    <div v-if="fcard" class="mobile-form" style="background-color:aquamarine;">
+                    <div v-if="fcard" class="mobile-form" >
                        
                         <form action="" >
-                            <div class="mobile-coluna">
-                                <label for="">Data</label>
-                                <input type="text" name="" id="" style="width: 120px;">
+
+                            <div class="mobile-linha">
+                                <div class="mobile-coluna">
+                                    <label for="">Data</label>
+                                    <input type="text" name="" id="" style="width: 120px;">
+                                </div>
+
+                                <div class="mobile-coluna">
+                                    <label for="">Mês</label>
+                                    <select name="" id="" style="width: 120px;">
+                                        <option value="janeiro">Janeiro</option>
+                                        <option value="fevereiro">Fevereiro</option>
+                                        <option value="marco">Março</option>
+                                        <option value="maio">Maio</option>
+                                        <option value="abril">Abril</option>
+                                    </select>
+                                    
+                                </div>
+
                             </div>
+                           
     
                             <div class="mobile-coluna">
                                 <label for="">Nome do evento</label>
@@ -64,7 +81,7 @@
 
                      <!-- [ ] ============================= -->
 
-                     <div v-if="feditar" class="mobile-form" style="background-color:rgb(255, 236, 127);">
+                     <div v-if="feditar" class="mobile-form" >
                         
                         <form action="" >
                             <div class="mobile-coluna">
@@ -99,17 +116,40 @@
                     <div class="mobile-coluna">
                        <div class="header-meses">
                            <p>Março</p>
-                           <p>30 Eventos</p>
+                           <p></p>
                            <i class="material-icons"  v-if="m1" @click="m1 = false"> keyboard_arrow_up</i>  
                            <i class="material-icons"  v-if="!m1" @click="m1 = true"> keyboard_arrow_down</i>                                                
                        </div>
 
                        <div class="listagem" v-if="m1">
-                            <div v-for="item in lista" :key="item.index">
+                            <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'marco'">
                                 <div class="lista-grid">
                                     <p @click="formEditar(item)">{{item.datas}}</p>
-                                    <p>{{item.titulo}}</p>
-                                    <p>{{item.responsavel}}</p>
+                                    <div class="lista-grid-center">
+                                        <p>{{item.titulo}}</p>
+                                        <p>{{item.responsavel}}</p>
+                                    </div>  
+                                    <i class="material-icons"> close</i>
+                                </div>
+                            </div>
+                       </div>
+
+
+                       <div class="header-meses">
+                            <p>Abril</p>                           
+                            <p></p>                           
+                            <i class="material-icons"  v-if="m2" @click="m2 = false"> keyboard_arrow_up</i>  
+                            <i class="material-icons"  v-if="!m2" @click="m2 = true"> keyboard_arrow_down</i>    
+                        </div>
+
+                        <div class="listagem" v-if="m2">
+                            <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'abril'">
+                                <div class="lista-grid">
+                                    <p @click="formEditar(item)">{{item.datas}}</p>
+                                    <div class="lista-grid-center">
+                                        <p>{{item.titulo}}</p>
+                                        <p>{{item.responsavel}}</p>
+                                    </div>                                  
                                     <i class="material-icons"> close</i>
                                 </div>
                             </div>
@@ -118,30 +158,85 @@
 
 
 
-
-
-
-                       <div class="header-meses">
-                            <p>Abril</p>                           
-                            <p>30 Eventos</p>                           
-                            <i class="material-icons"> keyboard_arrow_up</i>     
-                        </div>
-
                     <div class="header-meses">
                         <p>Maio</p>
+                        <p></p>                           
+                        <i class="material-icons"  v-if="m3" @click="m3 = false"> keyboard_arrow_up</i>  
+                        <i class="material-icons"  v-if="!m3" @click="m3 = true"> keyboard_arrow_down</i>    
                     </div>
+
+                    <div class="listagem" v-if="m3">
+                        <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'maio'">
+                            <div class="lista-grid">
+                                <p @click="formEditar(item)">{{item.datas}}</p>
+                                <div class="lista-grid-center">
+                                    <p>{{item.titulo}}</p>
+                                    <p>{{item.responsavel}}</p>
+                                </div>                                  
+                                <i class="material-icons"> close</i>
+                            </div>
+                        </div>
+                   </div>
 
                     <div class="header-meses">
                         <p>Junho</p>
+                        <p></p>                           
+                        <i class="material-icons"  v-if="m4" @click="m4 = false"> keyboard_arrow_up</i>  
+                        <i class="material-icons"  v-if="!m4" @click="m4 = true"> keyboard_arrow_down</i>    
                     </div>
+
+                    <div class="listagem" v-if="m4">
+                        <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'junho'">
+                            <div class="lista-grid">
+                                <p @click="formEditar(item)">{{item.datas}}</p>
+                                <div class="lista-grid-center">
+                                    <p>{{item.titulo}}</p>
+                                    <p>{{item.responsavel}}</p>
+                                </div>                                  
+                                <i class="material-icons"> close</i>
+                            </div>
+                        </div>
+                   </div>
 
                     <div class="header-meses">
                         <p>Julho</p>
+                        <p></p>                           
+                        <i class="material-icons"  v-if="m5" @click="m5 = false"> keyboard_arrow_up</i>  
+                        <i class="material-icons"  v-if="!m5" @click="m5 = true"> keyboard_arrow_down</i>    
                     </div>
+
+                    <div class="listagem" v-if="m5">
+                        <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'julho'">
+                            <div class="lista-grid">
+                                <p @click="formEditar(item)">{{item.datas}}</p>
+                                <div class="lista-grid-center">
+                                    <p>{{item.titulo}}</p>
+                                    <p>{{item.responsavel}}</p>
+                                </div>                                  
+                                <i class="material-icons"> close</i>
+                            </div>
+                        </div>
+                   </div>
 
                     <div class="header-meses">
                         <p>Agosto</p>
+                        <p></p>                           
+                        <i class="material-icons"  v-if="m6" @click="m6 = false"> keyboard_arrow_up</i>  
+                        <i class="material-icons"  v-if="!m6" @click="m6 = true"> keyboard_arrow_down</i>    
                     </div>
+
+                    <div class="listagem" v-if="m6">
+                        <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'agosto'">
+                            <div class="lista-grid">
+                                <p @click="formEditar(item)">{{item.datas}}</p>
+                                <div class="lista-grid-center">
+                                    <p>{{item.titulo}}</p>
+                                    <p>{{item.responsavel}}</p>
+                                </div>                                  
+                                <i class="material-icons"> close</i>
+                            </div>
+                        </div>
+                   </div>
 
                     <div class="header-meses">
                         <p>Setembro</p>
@@ -158,6 +253,8 @@
                     <div class="header-meses">
                         <p>Dezembro</p>
                     </div>
+
+                  
                        
                     </div>   
 

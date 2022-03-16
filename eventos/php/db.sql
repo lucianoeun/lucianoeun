@@ -1,0 +1,1 @@
+CREATE TABLE `advdata`.`eventos` ( `id` INT NOT NULL AUTO_INCREMENT , `datas` VARCHAR(30) NOT NULL , `titulo` VARCHAR(100) NOT NULL , `responsavel` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB; 
