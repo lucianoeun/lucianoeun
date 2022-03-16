@@ -1,11 +1,12 @@
-const url = 'http://localhost/ephp/controle.php';
+//const url = 'http://localhost/ephp/controle.php';
+const url = 'http://localhost/ephp/php/controle.php';
 const app = new Vue({
     el: "#app",
     created() {
         this.listagem()
     },   
     data: {
-        fcard: true,
+        fcard: false,
         feditar: false,
         info:'',
         m1:false,

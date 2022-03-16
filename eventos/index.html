@@ -23,7 +23,7 @@
                 <div class="mobile-menu menu-color">
                     <p></p>
                     <p>Eventos</p>
-                    <i class="material-icons"> close</i>
+                    <i class="material-icons" @click="fcard = true"> add</i>
                 </div>
 
   <!-- [ ] ============================= -->
@@ -36,18 +36,23 @@
                     <!-- [ ] ============================= -->
 
                     <div v-if="fcard" class="mobile-form" >
+                        <div class="l-menux">
+                            <p></p>
+                            <p></p>
+                            <i class="material-icons"  @click="fcard = false"> close</i>
+                        </div>
                        
                         <form action="" >
 
                             <div class="mobile-linha">
                                 <div class="mobile-coluna">
                                     <label for="">Data</label>
-                                    <input type="text" name="" id="" style="width: 120px;">
+                                    <input type="text" name="" id="" >
                                 </div>
 
                                 <div class="mobile-coluna">
                                     <label for="">Mês</label>
-                                    <select name="" id="" style="width: 120px;">
+                                    <select name="" id="" >
                                         <option value="janeiro">Janeiro</option>
                                         <option value="fevereiro">Fevereiro</option>
                                         <option value="marco">Março</option>
@@ -62,12 +67,12 @@
     
                             <div class="mobile-coluna">
                                 <label for="">Nome do evento</label>
-                                <input type="text" name="" id="" style="width: 320px;">
+                                <input type="text" name="" id="" >
                             </div>
     
                             <div class="mobile-coluna">
                                 <label for="">Responsável</label>
-                                <input type="text" name="" id="" style="width: 230px;">
+                                <input type="text" name="" id="" >
                             </div>   
 
                             <div class="mobile-linha">
@@ -91,7 +96,7 @@
     
                             <div class="mobile-coluna">
                                 <label for="">Nome do evento</label>
-                                <input type="text" name="" id="" v-model="evento.titulo" style="width: 320px;">
+                                <input type="text" name="" id="" v-model="evento.titulo" style="width: 300px;">
                             </div>
     
                             <div class="mobile-coluna">

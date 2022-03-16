@@ -40,11 +40,11 @@ p {
 .mobile {
     width: 420px;
     height: auto;  
+    margin: 0 auto;
     display: flex;
     flex-direction: column;  
       
 }
-
 
 /*==[ MENU ]===============================*/
 
@@ -61,12 +61,16 @@ p {
 }
 
 .mobile-menu i{
-   font-size: 1.8rem;
+   font-size: 2rem;
+   cursor: pointer;
 }
 
 .menu-color{
     background-color: #1A237E;
 }
+
+
+
 
 /*==[ ]===============================*/
 
@@ -85,7 +89,8 @@ form{
     width: 100%;
     height: auto;   
     display: flex;
-    flex-direction: column;  
+    flex-direction: column; 
+    padding: 10px 30px 30px 30px; 
 }
 .mobile-coluna{
     width: 100%;
@@ -147,8 +152,27 @@ label{
     height: auto;   
     display: flex;
     flex-direction: column;   
-    padding: 15px 0px 15px 0px;
+    background-color: #ccc;
 }
+
+
+
+.l-menux {
+    width: 100%;
+    height: 30px;   
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;   
+    padding: 10px 10px 10px 15px; 
+}
+
+.l-menux i{
+   font-size: 1.8rem;
+   cursor: pointer;
+}
+
+
 
 .mobile-form p{
    text-align: center;
@@ -165,7 +189,11 @@ label{
     border-radius: 4px;
  }
 
+
+
 /*==[ ]===============================*/
+
+
 .listagem{
     width: 100%;
     height: auto;   

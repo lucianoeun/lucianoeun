@@ -1,1 +1,1 @@
-CREATE TABLE `advdata`.`eventos` ( `id` INT NOT NULL AUTO_INCREMENT , `datas` VARCHAR(30) NOT NULL , `titulo` VARCHAR(100) NOT NULL , `responsavel` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB; 
+CREATE TABLE `advdata`.`eventos` ( `id` INT NOT NULL AUTO_INCREMENT , `datas` VARCHAR(12) NOT NULL , `titulo` VARCHAR(30) NOT NULL , `meses` VARCHAR(12) NOT NULL ,`responsavel` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB; 
