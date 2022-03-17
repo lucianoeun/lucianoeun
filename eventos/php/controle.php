@@ -85,6 +85,12 @@
         $resultado = $services->selectOne($id, $tabela);
     }
 
+    if ($action == 'logar') {       
+        $senha = $_GET['senha'];
+        $services = new Services();
+        $resultado = $services->login($senha, 'usuarios');
+    }
+
     if ($action == 'deletar') {       
         $id = $_GET['id'];
         $services = new Services();
