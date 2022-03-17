@@ -8,6 +8,8 @@ const app = new Vue({
     data: {
         fcard: false,
         feditar: false,
+        senha:'',
+        logado:'xxx',
         info:'',
         m1:false,
         m2:false,
@@ -24,12 +26,29 @@ const app = new Vue({
            datas:'',
            meses:'',
            titulo:'',
-           responsavel:''
+           responsavel:'',
+           rgt:''
         }, 
         eventos:[]     
       
     },
     methods: {
+        login: async function(item){
+            if (item === '') {
+                this.info = "Digite a sua senha"
+            }else{
+                const res = await axios.get(url, { params: { action:'logar', senha:item }, headers: { 'Content-Type': 'text/plain' }});
+                if(res.data){
+                    console.log(res.data.usuario);                   
+                    window.location.href = 'lista.html';
+                    this.logado = res.data.usuario;
+                    console.log(this.logado);
+                }else{
+                    console.log('Voce não está cadastrado');
+                }
+            }            
+                     
+        },
         formEditar: function(item){
             this.feditar = true;
             this.evento.datas = item.datas;

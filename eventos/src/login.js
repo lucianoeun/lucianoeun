@@ -1,5 +1,5 @@
-const url = 'http://localhost/ephp/controle.php';
-//const url = 'http://localhost/ephp/php/controle.php';
+//const url = 'http://localhost/ephp/controle.php';
+const url = 'http://localhost/ephp/php/controle.php';
 const app = new Vue({
     el: "#app",   
     data: {       

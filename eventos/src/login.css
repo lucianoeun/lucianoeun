@@ -81,7 +81,7 @@ p {
     border:none;
 }
 
-input{
+.login input{
     width: 100%;
     height: 35px; 
     border: 1px solid #ccc;  
