@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+html {
+    font-size: 62%;
+}
+
+html,
+body {
+    height: 100vh;   
+    font-family: "Source Sans Pro";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*==[ ]===============================*/
+
+
+
+p {
+    font-size: 1.6rem; 
+}
+
+
+
+/*==[ MENU ]===============================*/
+
+.logo-box{
+    width: 200px;
+    height: 300px;   
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.logo{
+    width: 160px;
+    height: 160px;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    object-fit: cover;   
+}
+
+.login{
+    width: 120px;
+    height: auto;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+
+.login button{
+    width: 80px;
+    height: 35px;   
+    margin-top: 15px;
+    border:none;
+}
+
+input{
+    width: 100%;
+    height: 35px; 
+    border: 1px solid #ccc;  
+    text-align: center;
+    padding-left: 8px;
+    border-radius: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.mobile-menu {
+    width: 100%;
+    height: 50px;   
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;   
+    padding: 10px 10px 10px 15px;
+    color: #fff;
+}
+
+.mobile-menu i{
+   font-size: 2rem;
+   cursor: pointer;
+}
+
+.menu-color{
+    background-color: #1A237E;
+}
+
+
+
+
+/*==[ ]===============================*/
+
+.mobile-body {
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: column;   
+    padding: 10px;
+    gap: 5px;
+}
+
+/*==[ ]===============================*/
+
+form{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: column; 
+    padding: 10px 30px 30px 30px; 
+}
+.mobile-coluna{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.mobile-linha{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+
+
+
+/*==[ ]===============================*/
+
+.header-meses{
+    width: 100%;
+    height: 30px;   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 10px;
+    background-color: #303F9F;
+    color: #fff;
+    padding-left: 15px;
+}
+
+.header-meses i{
+    font-size: 1.8rem;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/*==[ ]===============================*/
+
+.mobile-form{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: column;   
+    background-color: #ccc;
+}
+
+
+
+.l-menux {
+    width: 100%;
+    height: 30px;   
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;   
+    padding: 10px 10px 10px 15px; 
+}
+
+.l-menux i{
+   font-size: 1.8rem;
+   cursor: pointer;
+}
+
+
+
+.mobile-form p{
+   text-align: center;
+   font-size: 1.6rem;
+}
+
+.mobile-form button{
+    width: 80px;
+    height: 35px;
+    border:none;
+    margin-top: 5px;
+    cursor: pointer;
+    background-color: #b9e6ad;
+    border-radius: 4px;
+ }
+
+
+
+/*==[ ]===============================*/
+
+
+.listagem{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: column;  
+    padding: 5px;
+}
+
+.lista-grid{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+    align-items: center;
+    border-bottom: 1px solid #E8EAF6;
+    margin-top: 10px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.lista-grid-center{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+    align-items: center;   
+    
+}
+
+.lista-grid:hover{  
+    background-color:#9FA8DA;
+}
+
+
+.lista-grid i{
+    font-size: 1.4rem;
+    color: red;
+    cursor: pointer;
+}
+
+/*==[ ]===============================*/
+/*==[ ]===============================*/
+/*==[ ]===============================*/
+
+
+
+.contra-capa {
+    width: 100%;
+    height: 560px;   
+    display: flex;
+    flex-direction: column; 
+    background: rgb(1,48,3);
+    background: linear-gradient(0deg, rgba(1,48,3,1) 14%, rgba(19,82,2,0.2147233893557423) 38%, rgba(6,106,5,0.0018382352941176405) 100%);
+
+
+margin-top: -560px;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+
+/*==[ 640px ]===============================*/
+
+@media (max-width: 480px) {
+    .mobile {
+        width: 100%;
+        height: auto;  
+        display: flex;
+        flex-direction: column;  
+        margin-top: 0px;
+    }
+}

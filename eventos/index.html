@@ -5,274 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos</title>
+    <title>Trilhas Adventure</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="src/login.css">
 </head>
 
 <body>
+    <div id="app">     
+        <div class="logo-box">
+            <div class="logo">
+                <img src="src/logo.png" alt="">
+            </div>
+            <div class="login">
+                <input type="text" name="" id="" v-model="snh">
+                <button @click.prevent.stop="login(snh)">Logar</button>
+            </div>
+            <p v-if="info">{{info}}</p>
 
-
-    <div id="app">       
-
-         <!-- [ ] ============================= -->
-
-        
-            <div class="mobile">
-               
-                <div class="mobile-menu menu-color">
-                    <p></p>
-                    <p>Eventos</p>
-                    <i class="material-icons" @click="fcard = true"> add</i>
-                </div>
-
-  <!-- [ ] ============================= -->
-
-
-                <div class="mobile-body">
-                  
-                    <p>Criação de eventos provisorios para organização da agenda anual.</p>
-                    
-                    <!-- [ ] ============================= -->
-
-                    <div v-if="fcard" class="mobile-form" >
-                        <div class="l-menux">
-                            <p></p>
-                            <p></p>
-                            <i class="material-icons"  @click="fcard = false"> close</i>
-                        </div>
-                       
-                        <form action="" >
-
-                            <div class="mobile-linha">
-                                <div class="mobile-coluna">
-                                    <label for="">Data</label>
-                                    <input type="text" name="" id="" >
-                                </div>
-
-                                <div class="mobile-coluna">
-                                    <label for="">Mês</label>
-                                    <select name="" id="" >
-                                        <option value="janeiro">Janeiro</option>
-                                        <option value="fevereiro">Fevereiro</option>
-                                        <option value="marco">Março</option>
-                                        <option value="maio">Maio</option>
-                                        <option value="abril">Abril</option>
-                                    </select>
-                                    
-                                </div>
-
-                            </div>
-                           
-    
-                            <div class="mobile-coluna">
-                                <label for="">Nome do evento</label>
-                                <input type="text" name="" id="" >
-                            </div>
-    
-                            <div class="mobile-coluna">
-                                <label for="">Responsável</label>
-                                <input type="text" name="" id="" >
-                            </div>   
-
-                            <div class="mobile-linha">
-                               <button>Adicionar</button>
-                               <p v-if="info">{{info}}</p>
-                            </div>                
-                       
-                        </form>  
-                    </div>
-
-
-                     <!-- [ ] ============================= -->
-
-                     <div v-if="feditar" class="mobile-form" >
-                        
-                        <form action="" >
-                            <div class="mobile-coluna">
-                                <label for="">Data</label>
-                                <input type="text" name="" id="" v-model="evento.datas" style="width: 120px;">
-                            </div>
-    
-                            <div class="mobile-coluna">
-                                <label for="">Nome do evento</label>
-                                <input type="text" name="" id="" v-model="evento.titulo" style="width: 300px;">
-                            </div>
-    
-                            <div class="mobile-coluna">
-                                <label for="">Responsável</label>
-                                <input type="text" name="" id="" v-model="evento.responsavel" style="width: 230px;">
-                            </div>   
-
-                            <div class="mobile-linha">
-                               <button>Salvar</button>
-                               <p v-if="info">{{info}}</p>
-                            </div>                
-                       
-                        </form>  
-                    </div>
-
-                   
-                    
-                      <!-- [ ] ============================= -->
-
-                  
-                    
-                    <div class="mobile-coluna">
-                       <div class="header-meses">
-                           <p>Março</p>
-                           <p></p>
-                           <i class="material-icons"  v-if="m1" @click="m1 = false"> keyboard_arrow_up</i>  
-                           <i class="material-icons"  v-if="!m1" @click="m1 = true"> keyboard_arrow_down</i>                                                
-                       </div>
-
-                       <div class="listagem" v-if="m1">
-                            <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'marco'">
-                                <div class="lista-grid">
-                                    <p @click="formEditar(item)">{{item.datas}}</p>
-                                    <div class="lista-grid-center">
-                                        <p>{{item.titulo}}</p>
-                                        <p>{{item.responsavel}}</p>
-                                    </div>  
-                                    <i class="material-icons"> close</i>
-                                </div>
-                            </div>
-                       </div>
-
-
-                       <div class="header-meses">
-                            <p>Abril</p>                           
-                            <p></p>                           
-                            <i class="material-icons"  v-if="m2" @click="m2 = false"> keyboard_arrow_up</i>  
-                            <i class="material-icons"  v-if="!m2" @click="m2 = true"> keyboard_arrow_down</i>    
-                        </div>
-
-                        <div class="listagem" v-if="m2">
-                            <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'abril'">
-                                <div class="lista-grid">
-                                    <p @click="formEditar(item)">{{item.datas}}</p>
-                                    <div class="lista-grid-center">
-                                        <p>{{item.titulo}}</p>
-                                        <p>{{item.responsavel}}</p>
-                                    </div>                                  
-                                    <i class="material-icons"> close</i>
-                                </div>
-                            </div>
-                       </div>
-
-
-
-
-                    <div class="header-meses">
-                        <p>Maio</p>
-                        <p></p>                           
-                        <i class="material-icons"  v-if="m3" @click="m3 = false"> keyboard_arrow_up</i>  
-                        <i class="material-icons"  v-if="!m3" @click="m3 = true"> keyboard_arrow_down</i>    
-                    </div>
-
-                    <div class="listagem" v-if="m3">
-                        <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'maio'">
-                            <div class="lista-grid">
-                                <p @click="formEditar(item)">{{item.datas}}</p>
-                                <div class="lista-grid-center">
-                                    <p>{{item.titulo}}</p>
-                                    <p>{{item.responsavel}}</p>
-                                </div>                                  
-                                <i class="material-icons"> close</i>
-                            </div>
-                        </div>
-                   </div>
-
-                    <div class="header-meses">
-                        <p>Junho</p>
-                        <p></p>                           
-                        <i class="material-icons"  v-if="m4" @click="m4 = false"> keyboard_arrow_up</i>  
-                        <i class="material-icons"  v-if="!m4" @click="m4 = true"> keyboard_arrow_down</i>    
-                    </div>
-
-                    <div class="listagem" v-if="m4">
-                        <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'junho'">
-                            <div class="lista-grid">
-                                <p @click="formEditar(item)">{{item.datas}}</p>
-                                <div class="lista-grid-center">
-                                    <p>{{item.titulo}}</p>
-                                    <p>{{item.responsavel}}</p>
-                                </div>                                  
-                                <i class="material-icons"> close</i>
-                            </div>
-                        </div>
-                   </div>
-
-                    <div class="header-meses">
-                        <p>Julho</p>
-                        <p></p>                           
-                        <i class="material-icons"  v-if="m5" @click="m5 = false"> keyboard_arrow_up</i>  
-                        <i class="material-icons"  v-if="!m5" @click="m5 = true"> keyboard_arrow_down</i>    
-                    </div>
-
-                    <div class="listagem" v-if="m5">
-                        <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'julho'">
-                            <div class="lista-grid">
-                                <p @click="formEditar(item)">{{item.datas}}</p>
-                                <div class="lista-grid-center">
-                                    <p>{{item.titulo}}</p>
-                                    <p>{{item.responsavel}}</p>
-                                </div>                                  
-                                <i class="material-icons"> close</i>
-                            </div>
-                        </div>
-                   </div>
-
-                    <div class="header-meses">
-                        <p>Agosto</p>
-                        <p></p>                           
-                        <i class="material-icons"  v-if="m6" @click="m6 = false"> keyboard_arrow_up</i>  
-                        <i class="material-icons"  v-if="!m6" @click="m6 = true"> keyboard_arrow_down</i>    
-                    </div>
-
-                    <div class="listagem" v-if="m6">
-                        <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'agosto'">
-                            <div class="lista-grid">
-                                <p @click="formEditar(item)">{{item.datas}}</p>
-                                <div class="lista-grid-center">
-                                    <p>{{item.titulo}}</p>
-                                    <p>{{item.responsavel}}</p>
-                                </div>                                  
-                                <i class="material-icons"> close</i>
-                            </div>
-                        </div>
-                   </div>
-
-                    <div class="header-meses">
-                        <p>Setembro</p>
-                    </div>
-
-                    <div class="header-meses">
-                        <p>Outubro</p>
-                    </div>
-
-                    <div class="header-meses">
-                        <p>Novembro</p>
-                    </div>
-
-                    <div class="header-meses">
-                        <p>Dezembro</p>
-                    </div>
-
-                  
-                       
-                    </div>   
-
-                
-                </div>
-            </div>                    
-          
+        </div>            
     </div>
    
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js "></script>
-    <script src="app.js"></script>
+    <script src="src/login.js"></script>
 
 </body>
 

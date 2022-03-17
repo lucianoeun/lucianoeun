@@ -72,23 +72,21 @@ public function selectOne($id, $tabela)
         return $resultado;
     }
 
-
-
-
 //=================================================
-//=======[  ]===================
+//============[ BUSCAR ]===================
 //=================================================
 
 
-public function buscar_numero($numero, $tabela)
-{
-    $sql = "SELECT * FROM $tabela WHERE numero = :numero";
-    $stmt = $this->connect()->prepare($sql);
-    $stmt->bindValue(':numero', $numero);
-    $stmt->execute();
-    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $resultado;        
-}
+public function login($senha, $tabela)
+    {
+        $sql = "SELECT * FROM $tabela WHERE senha = :senha";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindValue(':senha', $senha);
+        $stmt->execute();
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $resultado;
+    }
+
 
 
 //=================================================
