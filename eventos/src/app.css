@@ -61,7 +61,7 @@ p {
 }
 
 .mobile-menu i{
-   font-size: 2rem;
+   font-size: 2.4rem;
    cursor: pointer;
 }
 
@@ -129,7 +129,21 @@ p {
 /*=================================*/
 /*==[ ]===============================*/
 
+.submenu{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #303F9F;
+    padding: 5px 10px 5px 10px;
+    gap: 5px;
+    color: rgb(162, 208, 250);
+}
 
+.submenu p{
+   font-size: 1.4rem;
+}
 
 /*==[ ]===============================*/
 
@@ -193,7 +207,7 @@ label{
     justify-content: space-between; 
     align-items: center;
     margin-top: 10px;
-    background-color: #303F9F;
+    background-color: #3F51B5;
     color: #fff;
     padding-left: 15px;
 }
@@ -211,7 +225,7 @@ label{
     height: auto;   
     display: flex;
     flex-direction: column;   
-    background-color: #ccc;
+    background-color: #C5CAE9;
 }
 
 
@@ -244,7 +258,8 @@ label{
     border:none;
     margin-top: 5px;
     cursor: pointer;
-    background-color: #b9e6ad;
+    background-color: #283593;
+    color: #fff;
     border-radius: 4px;
  }
 
@@ -284,7 +299,7 @@ label{
     
 }
 
-.lista-grid:hover{  
+.lista-grid-center:hover{  
     background-color:#9FA8DA;
 }
 
@@ -293,6 +308,10 @@ label{
     font-size: 1.4rem;
     color: red;
     cursor: pointer;
+}
+
+.lista-grid i:hover{
+    font-size: 1.9rem;
 }
 
 /*==[ ]===============================*/

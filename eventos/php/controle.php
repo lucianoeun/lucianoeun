@@ -105,3 +105,20 @@
     header("Access-Control-Allow-Headers: *");
     
     echo json_encode($resultado);
+
+//=====================================================================
+//=====================================================================
+//=====================================================================
+//=====================================================================
+
+
+// $data = json_decode(file_get_contents("php://input"));  
+// $action = $data->action;
+// $datas = $data->datas;
+// $meses = $data->meses;   
+// $titulo = $data->titulo;    
+// $responsavel = $data->responsavel;  
+// $rgt = $data->rgt; 
+
+
+

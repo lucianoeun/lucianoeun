@@ -9,7 +9,7 @@ const app = new Vue({
         fcard: false,
         feditar: false,
         senha:'',
-        logado:'xxx',
+        logado:'',
         info:'',
         m1:false,
         m2:false,
@@ -56,24 +56,63 @@ const app = new Vue({
             this.evento.titulo = item.titulo;           
             this.evento.responsavel = item.responsavel;           
         },
-        editar: async function() {
-            if (this.evento.datas === '' || this.evento.titulo === '' || this.evento.responsavel ==='') {
-                this.info = "Todos os campos devem ser pre-enchidos."
+        editar: async function() {          
+            const res = await axios.post(url,
+            { 
+                params: { 
+                    action:'editar',
+                    id: this.evento.id, 
+                    datas: this.evento.datas,
+                    meses: this.evento.meses,
+                    titulo: this.evento.titulo,
+                    responsavel: this.evento.responsavel,
+                    rgt: this.getDatas()
+                }, 
+                headers: { 'Content-Type': 'text/plain' }} 
+            );           
+           
+            if (res.data === 'ok') {
+                his.feditar = false;                   
+                this.listagem();
             } else {
-                const res = await axios.post(url,
-                this.evento, { headers: { 'Content-Type': 'text/plain' } } );
-               
-                if (res.data === 'ok') {
-                    his.feditar = false;                   
-                    this.listagem();
-                } else {
-                    this.info = res.data
-                }
+                this.info = 'Erro, tente de novo';
             }
+            
         },
-        listagem: async function() {            
-            const res = await axios.get(url, { params: { action:'listar' }, headers: { 'Content-Type': 'text/plain' }});
-            this.eventos = res.data;           
+        getDatas: () => {
+            var dts = new Date();
+            return dts.toLocaleDateString()
         },
+        listagem: async function() {  
+            var dados = { action:'listar'}                       
+            const res = await axios.get(url, dados, { headers: { 'Content-Type': 'text/plain' }});
+            this.eventos = res.data; 
+            console.log(res.data);          
+        },
+        cadastrar: async function(){
+            
+            var dados = {
+                action:'cadastrar',                   
+                datas: this.evento.datas,
+                meses: this.evento.meses,
+                titulo: this.evento.titulo,
+                responsavel: this.evento.responsavel,
+                rgt: this.getDatas()
+            }
+           
+            if (this.evento.datas === '' || this.evento.titulo === '' || this.evento.responsavel ==='') {
+                this.info = "Campos sem dados";
+            } else {
+                const res = await axios.post(url, dados, { headers: { 'Content-Type': 'text/plain' } } );        
+                this.info = "Cadastrando..."; 
+                
+                if (res.data === 'ok') {                     
+                    this.listagem();
+                    this.info = "";
+                } else {
+                    this.info = 'Erro, tente de novo';
+                }               
+            }
+        }
     }
 });

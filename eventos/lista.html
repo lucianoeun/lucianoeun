@@ -17,63 +17,59 @@
 
          <!-- [ ] ============================= -->
         
-            <div class="mobile">
-               
+            <div class="mobile">               
                 <div class="mobile-menu menu-color">
-                    <p>{{logado}}</p>
-                    <p>Eventos</p>
+                    <p></p>
+                    <p @click="fcard = true">+ Eventos</p>
                     <i class="material-icons"> close</i>
+                </div>
+                <div class="submenu">
+                    <i class="material-icons"> account_circle</i><p>Luciano</p> <p>eventos: 10</p>
                 </div>
 
   <!-- [ ] ============================= -->
 
 
                 <div class="mobile-body">
-                  
-                    <p>Criação de eventos provisorios para organização da agenda anual.</p>
-                    
+                                     
                     <!-- [ ] ============================= -->
 
                     <div v-if="fcard" class="mobile-form" >
                        
                         <form action="" >
-
                             <div class="mobile-linha">
                                 <div class="mobile-coluna">
                                     <label for="">Data</label>
-                                    <input type="text" name="" id="" style="width: 120px;">
+                                    <input type="text" name="datas" v-model="evento.datas">
                                 </div>
 
                                 <div class="mobile-coluna">
                                     <label for="">Mês</label>
-                                    <select name="" id="" style="width: 120px;">
+                                    <select name="meses" v-model="evento.meses">
                                         <option value="janeiro">Janeiro</option>
                                         <option value="fevereiro">Fevereiro</option>
                                         <option value="marco">Março</option>
                                         <option value="maio">Maio</option>
                                         <option value="abril">Abril</option>
-                                    </select>
-                                    
+                                    </select>                                    
                                 </div>
-
-                            </div>
-                           
+                            </div>                           
     
                             <div class="mobile-coluna">
                                 <label for="">Nome do evento</label>
-                                <input type="text" name="" id="" style="width: 320px;">
+                                <input type="text" name="titulo" v-model="evento.titulo">
                             </div>
     
                             <div class="mobile-coluna">
                                 <label for="">Responsável</label>
-                                <input type="text" name="" id="" style="width: 230px;">
+                                <input type="text" name="responsavel" v-model="evento.responsavel">
                             </div>   
 
                             <div class="mobile-linha">
-                               <button>Adicionar</button>
-                               <p v-if="info">{{info}}</p>
+                               <button @click.prevent.stop="cadastrar()">Adicionar</button>
+                               <i class="material-icons" v-if="info"> campaign</i> <p v-if="info">{{info}}</p>
                             </div>                
-                       
+                            
                         </form>  
                     </div>
 
@@ -83,26 +79,39 @@
                      <div v-if="feditar" class="mobile-form" >
                         
                         <form action="" >
-                            <div class="mobile-coluna">
-                                <label for="">Data</label>
-                                <input type="text" name="" id="" v-model="evento.datas" style="width: 120px;">
-                            </div>
+                            <div class="mobile-linha">
+                                <div class="mobile-coluna">
+                                    <label for="">Data</label>
+                                    <input type="text" name="datas" v-model="evento.datas">
+                                </div>
+
+                                <div class="mobile-coluna">
+                                    <label for="">Mês</label>
+                                    <select name="meses" v-model="evento.meses">
+                                        <option value="janeiro">Janeiro</option>
+                                        <option value="fevereiro">Fevereiro</option>
+                                        <option value="marco">Março</option>
+                                        <option value="maio">Maio</option>
+                                        <option value="abril">Abril</option>
+                                    </select>                                    
+                                </div>
+                            </div>                           
     
                             <div class="mobile-coluna">
                                 <label for="">Nome do evento</label>
-                                <input type="text" name="" id="" v-model="evento.titulo" style="width: 320px;">
+                                <input type="text" name="titulo" v-model="evento.titulo">
                             </div>
     
                             <div class="mobile-coluna">
                                 <label for="">Responsável</label>
-                                <input type="text" name="" id="" v-model="evento.responsavel" style="width: 230px;">
+                                <input type="text" name="responsavel" v-model="evento.responsavel">
                             </div>   
 
                             <div class="mobile-linha">
-                               <button>Salvar</button>
-                               <p v-if="info">{{info}}</p>
+                               <button @click.prevent.stop="editar(evento)">Editar</button>
+                               <i class="material-icons" v-if="info"> campaign</i> <p v-if="info">{{info}}</p>
                             </div>                
-                       
+                            
                         </form>  
                     </div>
 
@@ -123,8 +132,8 @@
                        <div class="listagem" v-if="m1">
                             <div v-for="item in eventos" :key="item.index" v-if="item.meses == 'marco'">
                                 <div class="lista-grid">
-                                    <p @click="formEditar(item)">{{item.datas}}</p>
-                                    <div class="lista-grid-center">
+                                    <p>{{item.datas}}</p>
+                                    <div class="lista-grid-center" @click="formEditar(item)">
                                         <p>{{item.titulo}}</p>
                                         <p>{{item.responsavel}}</p>
                                     </div>  
