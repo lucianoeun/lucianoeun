@@ -1,5 +1,5 @@
-//const url = 'http://localhost/ephp/controle.php';
-const url = 'http://localhost/ephp/php/controle.php';
+const url = 'http://localhost/ephp/controle.php';
+//const url = 'http://localhost/ephp/php/controle.php';
 const app = new Vue({
     el: "#app",
     created() {
@@ -34,15 +34,29 @@ const app = new Vue({
     },
     methods: {
         login: async function(item){
+            var dados = {
+                action:'login',                   
+                senha: item
+            }
+
             if (item === '') {
                 this.info = "Digite a sua senha"
             }else{
-                const res = await axios.get(url, { params: { action:'logar', senha:item }, headers: { 'Content-Type': 'text/plain' }});
+                const res = await axios.post(url, dados,{ headers: { 'Content-Type': 'text/plain' }});
                 if(res.data){
                     console.log(res.data.usuario);                   
                     window.location.href = 'lista.html';
                     this.logado = res.data.usuario;
                     console.log(this.logado);
+                    var nome = res.data.usuario;
+                    //document.cookie = res.data.usuario;
+                    sessionStorage.setItem("usuario", nome);
+                    sessionStorage.setItem('key', 'value');
+                    let data = sessionStorage.getItem('key');
+                    sessionStorage.removeItem('key');
+                    sessionStorage.clear();
+
+
                 }else{
                     console.log('Voce não está cadastrado');
                 }
@@ -51,31 +65,45 @@ const app = new Vue({
         },
         formEditar: function(item){
             this.feditar = true;
+            this.evento.id = item.id;
             this.evento.datas = item.datas;
             this.evento.meses = item.meses;
             this.evento.titulo = item.titulo;           
             this.evento.responsavel = item.responsavel;           
         },
-        editar: async function() {          
-            const res = await axios.post(url,
-            { 
-                params: { 
-                    action:'editar',
-                    id: this.evento.id, 
-                    datas: this.evento.datas,
-                    meses: this.evento.meses,
-                    titulo: this.evento.titulo,
-                    responsavel: this.evento.responsavel,
-                    rgt: this.getDatas()
-                }, 
-                headers: { 'Content-Type': 'text/plain' }} 
-            );           
-           
+        editar: async function() {   
+            var dados = {
+                action:'editar',
+                id: this.evento.id,                   
+                datas: this.evento.datas,
+                meses: this.evento.meses,
+                titulo: this.evento.titulo,
+                responsavel: this.evento.responsavel,
+                rgt: this.getDatas()
+            }
+
+            const res = await axios.post(url, dados,{ headers: { 'Content-Type': 'text/plain' }});                    
+             
             if (res.data === 'ok') {
-                his.feditar = false;                   
+                this.feditar = false;                   
                 this.listagem();
             } else {
                 this.info = 'Erro, tente de novo';
+            }
+            
+        },
+        excluir: async function(id) {   
+            var dados = {
+                action:'excluir',
+                id: id                 
+            }
+
+            const res = await axios.post(url, dados,{ headers: { 'Content-Type': 'text/plain' }});                    
+           
+            if (res.data === 'ok') {                                
+                this.listagem();
+            } else {               
+                console.log('Erro, tente de novo')
             }
             
         },
@@ -84,10 +112,12 @@ const app = new Vue({
             return dts.toLocaleDateString()
         },
         listagem: async function() {  
-            var dados = { action:'listar'}                       
-            const res = await axios.get(url, dados, { headers: { 'Content-Type': 'text/plain' }});
+            var dados = { 
+                action:'listar'
+            }                       
+            const res = await axios.post(url, dados, { headers: { 'Content-Type': 'text/plain' }});
             this.eventos = res.data; 
-            console.log(res.data);          
+                     
         },
         cadastrar: async function(){
             
@@ -108,7 +138,7 @@ const app = new Vue({
                 
                 if (res.data === 'ok') {                     
                     this.listagem();
-                    this.info = "";
+                    this.info = "Sucesso";
                 } else {
                     this.info = 'Erro, tente de novo';
                 }               

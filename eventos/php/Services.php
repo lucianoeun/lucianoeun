@@ -10,7 +10,7 @@ class Services extends Db
 
     public function select($tabela)
     {
-        $sql = "SELECT * FROM $tabela ORDER BY id DESC";
+        $sql = "SELECT * FROM $tabela ";
         $resultado = $this->connect()->query($sql);
 
         if ($resultado->rowCount() > 0) {
