@@ -80,7 +80,23 @@ var app = new Vue({
         btnmenos: function() {
             let valor = this.semanas - 1;
             this.semanas = valor;
-        }
+        },
+
+  // sessionStorage.setItem('key', 'value');
+            // let nome = sessionStorage.getItem('usuario');    
+            // this.logado = nome;      
+            // sessionStorage.removeItem('key');
+//document.cookie = res.data.usuario;
+            //sessionStorage.setItem("usuario", 'luciano');
+            // sessionStorage.setItem('key', 'value');
+            //let nome = sessionStorage.getItem('usuario');          
+            // sessionStorage.removeItem('key');
+
+
+
+
+
+
     }
 
 });

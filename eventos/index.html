@@ -14,11 +14,12 @@
     <div id="app">     
         <div class="logo-box">
             <div class="logo">
-                <img src="src/logo.png" alt="">
+                <img src="src/logo-min.png" alt="">
             </div>
             <div class="login">
-                <input type="text" name="senha" id="senha" v-model="senha">
+                <input type="text" name="senha" id="senha" v-model="senha"  maxlength="6">
                 <button @click.prevent.stop="login(senha)">Logar</button>
+                
             </div>
             <p v-if="info">{{info}}</p>
 
@@ -27,7 +28,7 @@
    
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js "></script>
-    <script src="src/app.js"></script>
+    <script src="src/login.js"></script>
 
 </body>
 

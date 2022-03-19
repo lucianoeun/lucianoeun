@@ -37,6 +37,11 @@ p {
 }
 
 
+.bcg{
+    
+    background-color:#3F51B5;
+}
+
 .mobile {
     width: 420px;
     height: auto;  
@@ -47,6 +52,20 @@ p {
 }
 
 /*==[ MENU ]===============================*/
+
+.l-menu-x {
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-end;  
+    
+}
+
+.l-menu-x i{
+    font-size: 2.4rem;
+    cursor: pointer;
+ }
 
 
 .mobile-menu {
@@ -64,6 +83,9 @@ p {
    font-size: 2.4rem;
    cursor: pointer;
 }
+.mobile-menu p{    
+    cursor: pointer;
+ }
 
 .menu-color{
     background-color: #1A237E;
@@ -344,5 +366,13 @@ margin-top: -560px;
         display: flex;
         flex-direction: column;  
         margin-top: 0px;
+    }
+
+    form{
+        width: 100%;
+        height: auto;   
+        display: flex;
+        flex-direction: column; 
+        padding: 10px 10px 30px 10px; 
     }
 }

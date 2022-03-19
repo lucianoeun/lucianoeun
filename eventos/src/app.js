@@ -3,13 +3,14 @@ const url = 'http://localhost/ephp/controle.php';
 const app = new Vue({
     el: "#app",
     created() {
-        this.listagem()
+        this.listagem();
+        this.verificalogin();
     },   
     data: {
         fcard: false,
         feditar: false,
-        senha:'',
-        logado:'',
+        usuario:'',
+        qtdeventos:0,
         info:'',
         m1:false,
         m2:false,
@@ -33,43 +34,15 @@ const app = new Vue({
       
     },
     methods: {
-        login: async function(item){
-            var dados = {
-                action:'login',                   
-                senha: item
-            }
-
-            if (item === '') {
-                this.info = "Digite a sua senha"
-            }else{
-                const res = await axios.post(url, dados,{ headers: { 'Content-Type': 'text/plain' }});
-                if(res.data){
-                    console.log(res.data.usuario);                   
-                    window.location.href = 'lista.html';
-                    this.logado = res.data.usuario;
-                    console.log(this.logado);
-                    var nome = res.data.usuario;
-                    //document.cookie = res.data.usuario;
-                    sessionStorage.setItem("usuario", nome);
-                    sessionStorage.setItem('key', 'value');
-                    let data = sessionStorage.getItem('key');
-                    sessionStorage.removeItem('key');
-                    sessionStorage.clear();
-
-
-                }else{
-                    console.log('Voce não está cadastrado');
-                }
-            }            
-                     
-        },
+        
         formEditar: function(item){
             this.feditar = true;
             this.evento.id = item.id;
             this.evento.datas = item.datas;
             this.evento.meses = item.meses;
             this.evento.titulo = item.titulo;           
-            this.evento.responsavel = item.responsavel;           
+            this.evento.responsavel = item.responsavel;   
+            this.evento.rgt = item.rgt;        
         },
         editar: async function() {   
             var dados = {
@@ -79,7 +52,7 @@ const app = new Vue({
                 meses: this.evento.meses,
                 titulo: this.evento.titulo,
                 responsavel: this.evento.responsavel,
-                rgt: this.getDatas()
+                rgt: this.evento.rgt
             }
 
             const res = await axios.post(url, dados,{ headers: { 'Content-Type': 'text/plain' }});                    
@@ -117,8 +90,26 @@ const app = new Vue({
             }                       
             const res = await axios.post(url, dados, { headers: { 'Content-Type': 'text/plain' }});
             this.eventos = res.data; 
-                     
+            //-------------------------------------
+            let listagem = res.data;
+            const volta = listagem.filter((nome) => nome.responsavel === sessionStorage.getItem('usuario'));
+            this.qtdeventos = volta.length;          
         },
+        verificalogin: async function(){
+            let logados = await sessionStorage.getItem('usuario'); 
+            this.usuario = logados;
+            console.log('logado'+logados);               
+            if(logados){
+                console.log('logado'+logados);
+            }else{
+                window.location.href = 'index.html';                   
+            }                             
+        },
+        logout:function(){            
+            sessionStorage.clear();
+            window.location.href = 'index.html';
+        },
+       
         cadastrar: async function(){
             
             var dados = {
