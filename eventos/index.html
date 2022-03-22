@@ -7,18 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trilhas Adventure</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="src/login.css">
+    <link rel="stylesheet" href="src/app.css">
 </head>
 
 <body>
     <div id="app">     
         <div class="logo-box">
             <div class="logo">
-                <img src="src/logo.png" alt="">
+                <img src="src/logo-min.png" alt="">
             </div>
             <div class="login">
-                <input type="text" name="" id="" v-model="snh">
-                <button @click.prevent.stop="login(snh)">Logar</button>
+                <input type="text" name="senha" id="senha" v-model="senha"  maxlength="6">
+                <button @click.prevent.stop="login(senha)">Logar</button>
+                
             </div>
             <p v-if="info">{{info}}</p>
 

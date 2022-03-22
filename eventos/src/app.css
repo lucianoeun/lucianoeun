@@ -37,6 +37,11 @@ p {
 }
 
 
+.bcg{
+    
+    background-color:#3F51B5;
+}
+
 .mobile {
     width: 420px;
     height: auto;  
@@ -47,6 +52,20 @@ p {
 }
 
 /*==[ MENU ]===============================*/
+
+.l-menu-x {
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-end;  
+    
+}
+
+.l-menu-x i{
+    font-size: 2.4rem;
+    cursor: pointer;
+ }
 
 
 .mobile-menu {
@@ -61,16 +80,92 @@ p {
 }
 
 .mobile-menu i{
-   font-size: 2rem;
+   font-size: 2.4rem;
    cursor: pointer;
 }
+.mobile-menu p{    
+    cursor: pointer;
+ }
 
 .menu-color{
     background-color: #1A237E;
 }
 
+/*==[ ]===============================*/
+/*=================================*/
 
 
+.logo-box{
+    width: 200px;
+    height: 300px;   
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.logo{
+    width: 160px;
+    height: 160px;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    object-fit: cover;   
+}
+
+.login{
+    width: 120px;
+    height: auto;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+
+.login button{
+    width: 80px;
+    height: 35px;   
+    margin-top: 15px;
+    border:none;
+    cursor: pointer;
+}
+
+.login input{
+    width: 100%;
+    height: 35px; 
+    border: 1px solid #ccc;  
+    text-align: center;
+    padding-left: 8px;
+    border-radius: 3px;
+}
+
+
+/*=================================*/
+/*==[ ]===============================*/
+
+.submenu{
+    width: 100%;
+    height: auto;   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #303F9F;
+    padding: 5px 10px 5px 10px;
+    gap: 5px;
+    color: rgb(162, 208, 250);
+}
+
+.submenu p{
+   font-size: 1.4rem;
+}
 
 /*==[ ]===============================*/
 
@@ -134,7 +229,7 @@ label{
     justify-content: space-between; 
     align-items: center;
     margin-top: 10px;
-    background-color: #303F9F;
+    background-color: #3F51B5;
     color: #fff;
     padding-left: 15px;
 }
@@ -152,7 +247,7 @@ label{
     height: auto;   
     display: flex;
     flex-direction: column;   
-    background-color: #ccc;
+    background-color: #C5CAE9;
 }
 
 
@@ -185,7 +280,8 @@ label{
     border:none;
     margin-top: 5px;
     cursor: pointer;
-    background-color: #b9e6ad;
+    background-color: #283593;
+    color: #fff;
     border-radius: 4px;
  }
 
@@ -225,7 +321,7 @@ label{
     
 }
 
-.lista-grid:hover{  
+.lista-grid-center:hover{  
     background-color:#9FA8DA;
 }
 
@@ -234,6 +330,10 @@ label{
     font-size: 1.4rem;
     color: red;
     cursor: pointer;
+}
+
+.lista-grid i:hover{
+    font-size: 1.9rem;
 }
 
 /*==[ ]===============================*/
@@ -266,5 +366,13 @@ margin-top: -560px;
         display: flex;
         flex-direction: column;  
         margin-top: 0px;
+    }
+
+    form{
+        width: 100%;
+        height: auto;   
+        display: flex;
+        flex-direction: column; 
+        padding: 10px 10px 30px 10px; 
     }
 }
