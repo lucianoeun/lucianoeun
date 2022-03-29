@@ -61,6 +61,85 @@ $(document).ready(function() {
         }
     }
 
+    //---------------------------------------------------------
+
+    // var xmlHttp = new XMLHttpRequest();
+    // xmlHttp.open("GET", "game.json", false);
+    // xmlHttp.send(null);
+
+    // var element = document.getElementById("content");
+
+    // var object = JSON.parse(xmlHttp.responseText);
+
+    //element.innerHTML = xmlHttp.responseText;
+
+    //element.innerHTML = object;
+
+    //element.innerHTML = object.games[0].titulo;
+
+    let url = "game.json";
+
+    $.getJSON(url, function(response){
+        if(response != null || response != undefined){
+           
+            var lista = [];
+
+            $.each(response, function(key, val){
+                lista.push(val);
+            })
+            console.log(lista);
+        }
+    })
+
+    $.ajax({
+        type:'GET',
+        url:'game.json',
+        success: function(response){
+            $.each(response, function(key, itens){
+                console.log(itens)
+            })
+        }
+    });
+
+    $.ajax({
+        method:"get",
+        dataType:"json",
+        url:"game.json",
+        success: function(data){
+        console.log(data);
+        }
+    });
+
+    // $.ajax({
+    //     type: 'POST',
+    //     url: '/form/',
+    //     data: {"name":"jonas"},
+    //     success: function(data) { alert('data: ' + data); },
+    //     contentType: "application/json",
+    //     dataType: 'json'
+    // });
+
+    // $.ajax({
+    //     url: "url", 
+    //     type: "POST",
+    //     dataType: "json",
+    //     contentType: "application/json; charset=utf-8",
+    //     data: JSON.stringify({ name: 'value1', email: 'value2' }),
+    //     success: function (result) {
+    //         // when call is sucessfull
+    //      },
+    //      error: function (err) {
+    //      // check the err for error details
+    //      }
+    //   })
+
+    
+
+
+
+
+
+
 
 
 
