@@ -3,7 +3,8 @@
 const url ='http://lmi.pessoal.ws/eventos/ephp/controle.php';
 
 const app = new Vue({
-    el: "#app",   
+    el: "#app",  
+   
     data: {       
         info:'',      
         senha:''
@@ -26,11 +27,14 @@ const app = new Vue({
                     window.location.href = 'lista.html';
                     
                 }else{
-                    console.log('Voce não está cadastrado');
+                    // console.log('Voce não está cadastrado');
+                    // this.info = "Senha errada";
+                    // setTimeout(() => console.log("aqui"), 2000);                                      
                     this.info = "Senha errada";
                 }
             }            
                      
-        },
+        }
+      
     }
 });

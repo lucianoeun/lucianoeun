@@ -11,24 +11,48 @@
 </head>
 
 <body class="lbody">
-    <div id="app">     
+    <div id="app">  
+        
+        <div class="l-full colorm">
+            <div class="l-center">
+                <div class="menu-x">
+                    <i class="material-icons" id="btnlock"> lock</i>
+                </div>
+            </div>
+        </div>
+
+        <div id="popup-bcg"></div>
+        <div id="popup-card">
+            <div class="f-menu-x">
+                <i class="material-icons" id="fbtnx"> close</i>
+            </div>
+
+            <div class="l-info" v-if="info">
+                <p>{{info}}</p>
+            </div>  
+            
+            <div class="f-login">
+                <input type="number" name="senha" id="senha" v-model="senha"  maxlength="6">
+                <button @click.prevent.stop="login(senha)">Logar</button>  
+            </div>             
+
+        </div>
+
+
+
+
         <div class="logo-box">
             <div class="logo">
                 <img src="src/logo-min.png" alt="">
-            </div>
-            <div class="login">
-                <input type="text" name="senha" id="senha" v-model="senha"  maxlength="6">
-                <button @click.prevent.stop="login(senha)">Logar</button>
-                
-            </div>
-            <p v-if="info">{{info}}</p>
-
+            </div>          
         </div>            
     </div>
    
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js "></script>
+    <script src="src/jquery.js"></script>
     <script src="src/login.js"></script>
+    <script src="src/main.js"></script>
 
 </body>
 
