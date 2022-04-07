@@ -1,6 +1,6 @@
-//const url = 'http://localhost/ephp/controle.php';
+const url = 'http://localhost/ephp/controle.php';
 //const url = 'http://localhost/ephp/php/controle.php';
-const url ='http://lmi.pessoal.ws/eventos/ephp/controle.php';
+//const url ='http://lmi.pessoal.ws/eventos/ephp/controle.php';
 
 const app = new Vue({
     el: "#app",
@@ -64,6 +64,9 @@ const app = new Vue({
                 this.listagem();
             } else {
                 this.info = 'Erro, tente de novo';
+                setTimeout(() => {                   
+                    this.info = false;
+                }, 2000);
             }
             
         },
@@ -79,6 +82,9 @@ const app = new Vue({
                 this.listagem();
             } else {               
                 console.log('Erro, tente de novo')
+                setTimeout(() => {                   
+                    this.info = false;
+                }, 2000);
             }
             
         },
@@ -91,11 +97,21 @@ const app = new Vue({
                 action:'listar'
             }                       
             const res = await axios.post(url, dados, { headers: { 'Content-Type': 'text/plain' }});
-            this.eventos = res.data; 
+                    
+            const lista = res.data;
+           
+            const data_ordem = lista.sort((a, b) =>{
+                if(a.datas < b.datas) return -1;
+                return 1;
+            });
+            this.eventos = data_ordem;
+          
             //-------------------------------------
+
             let listagem = res.data;
             const volta = listagem.filter((nome) => nome.responsavel === sessionStorage.getItem('usuario'));
-            this.qtdeventos = volta.length;          
+            this.qtdeventos = volta.length;  
+           
         },
         verificalogin: async function(){
             let logados = await sessionStorage.getItem('usuario'); 
@@ -125,6 +141,9 @@ const app = new Vue({
            
             if (this.evento.datas === '' || this.evento.titulo === '' || this.evento.responsavel ==='') {
                 this.info = "Campos sem dados";
+                setTimeout(() => {                   
+                    this.info = false;
+                }, 2000);
             } else {
                 const res = await axios.post(url, dados, { headers: { 'Content-Type': 'text/plain' } } );        
                 this.info = "Cadastrando..."; 
@@ -132,8 +151,14 @@ const app = new Vue({
                 if (res.data === 'ok') {                     
                     this.listagem();
                     this.info = "Sucesso";
+                    setTimeout(() => {                   
+                        this.info = false;
+                    }, 2000);
                 } else {
                     this.info = 'Erro, tente de novo';
+                    setTimeout(() => {                   
+                        this.info = false;
+                    }, 2000);
                 }               
             }
         }

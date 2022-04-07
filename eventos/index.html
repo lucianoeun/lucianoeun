@@ -30,9 +30,11 @@
             <div class="l-info" v-if="info">
                 <p>{{info}}</p>
             </div>  
+
+           
             
             <div class="f-login">
-                <input type="number" name="senha" id="senha" v-model="senha"  maxlength="6">
+                <input type="text" name="senha" id="senha" v-model="senha"  maxlength="6">
                 <button @click.prevent.stop="login(senha)">Logar</button>  
             </div>             
 

@@ -1,6 +1,6 @@
-//const url = 'http://localhost/ephp/controle.php';
+const url = 'http://localhost/ephp/controle.php';
 //const url = 'http://localhost/ephp/php/controle.php';
-const url ='http://lmi.pessoal.ws/eventos/ephp/controle.php';
+//const url ='http://lmi.pessoal.ws/eventos/ephp/controle.php';
 
 const app = new Vue({
     el: "#app",  
@@ -9,7 +9,8 @@ const app = new Vue({
         info:'',      
         senha:''
     },
-    methods: {       
+    methods: {  
+           
         login: async function(item){
             var dados = {
                 action:'logar',                   
@@ -17,20 +18,25 @@ const app = new Vue({
             }
 
             if (item === '') {
-                this.info = "Digite a sua senha"
+                
+                this.info = "Digite a sua senha";               
+                setTimeout(() => {                   
+                    this.info = false;
+                }, 2000);   
+
             }else{
                 const res = await axios.post(url, dados,{ headers: { 'Content-Type': 'text/plain' }});
-                console.log(res.data.usuario);
+                
                 if(res.data){                     
                     var nome = res.data.usuario;
                     sessionStorage.setItem("usuario", nome);                    
                     window.location.href = 'lista.html';
                     
-                }else{
-                    // console.log('Voce não está cadastrado');
-                    // this.info = "Senha errada";
-                    // setTimeout(() => console.log("aqui"), 2000);                                      
+                }else{                                                        
                     this.info = "Senha errada";
+                    setTimeout(() => {                   
+                        this.info = false;               
+                    }, 2000); 
                 }
             }            
                      
